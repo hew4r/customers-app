@@ -12,3 +12,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app-frame {
+  margin: 5%;
+  padding: 30px;
+  width: calc(80vw);
+
+  background-image: linear-gradient(-90deg, gray, white);
+}
+
+.customers-actions {
+  background: #AAAAAA;
+  padding: 10px;
+  margin: 10px;
+}
+
+.customers-actions button {
+  background: white;
+  min-width: 100px;
+  height: 30px;
+  margin: 5px;
+}
+
+.customers-list-item .field {
+  width: 160px;
+  margin: 1px;
+  padding: 4px;
+  background: #EEEEEE;
+  display: inline-block;
+}
