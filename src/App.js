@@ -3,14 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import HomeContainer from "./containers/HomeContainer";
 import CustomersContainer from "./containers/CustomersContainer";
+import CustomerContainer from "./containers/CustomerContainer";
 
 class App extends Component {
   
   renderHome = () => <HomeContainer />;
-  
-  renderCustomerContainer = () => <h1>Customer Container</h1>
-  
-  renderCustomerListContainer = () => <h1>Customers List Container</h1>
   
   renderCustomerNewContainer = () => <h1>Customer New Container</h1>
   
@@ -24,7 +21,15 @@ class App extends Component {
   
             <Switch>
               <Route path="/customers/new" component={this.renderCustomerNewContainer} />
-              <Route path="/customers/:dni" component={this.renderCustomerContainer} />
+              {/*<Route path="/customers/:dni" component={CustomerContainer} />*/}
+              <Route path="/customers/:dni" render={props => <CustomerContainer dni={props.match.params.dni}/> } />
+  
+              {/* con {...props} ademas de pasarle el dni, tmb le pasas match, history, location, pero siempre
+                  tratar de pasar lo que vamos a usar.
+              <Route path="/customers/:dni"
+                     render={props => <CustomerContainer {...props} dni={props.match.params.dni}/> } />*/}
+              
+              
             </Switch>
           {/*to hacia donde se va a redirigir
             <Link to="/customers">Customers</Link><br />
