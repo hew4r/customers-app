@@ -11,8 +11,11 @@ import {getCustomers} from "../selectors/customers";
 class CustomersContainer extends Component {
   
   componentDidMount() {
-    //TERCERO(3)
-    this.props.fetchCustomers();
+    
+    if (this.props.customers.length === 0) {
+      //TERCERO(3)
+      this.props.fetchCustomers();
+    }
   }
   
   handleAddNew = () => {
